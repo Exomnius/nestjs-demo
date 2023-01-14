@@ -1,0 +1,1 @@
+RUN su node -c "npm install -g @nestjs/cli"
