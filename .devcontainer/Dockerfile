@@ -1,1 +1,4 @@
-RUN su node -c "npm install -g @nestjs/cli"
+ARG VARIANT=16
+FROM mcr.microsoft.com/vscode/devcontainers/typescript-node:${VARIANT}
+
+RUN npm install -g @nestjs/cli
