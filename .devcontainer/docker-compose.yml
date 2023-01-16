@@ -4,6 +4,8 @@ services:
     build: 
       context: .
       dockerfile: Dockerfile
+      args:
+        VARIANT: 16
     volumes:
       - ../..:/workspaces:cached
     network_mode: service:db
@@ -17,7 +19,7 @@ services:
     environment:
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: postgres
-      POSTGRES_DB: postgres
+      POSTGRES_DB: demo-shop
 
 volumes:
   postgres-data:

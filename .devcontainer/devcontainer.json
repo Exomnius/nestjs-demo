@@ -1,17 +1,23 @@
 {
 	"name": "dev",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"args": {
-			"VARIANT": "latest"
-		}
-	},
 	"dockerComposeFile": "docker-compose.yml",
     "service": "devcontainer",
     "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-	"forwardPorts": [ 3000 ],
+	"forwardPorts": [ 3000, 5432 ],
 	"postCreateCommand": "npm i",
 	"settings": {
+		"sqltools.connections": [
+			{
+				"name": "Container database",
+				"driver": "PostgreSQL",
+				"previewLimit": 50,
+				"server": "localhost",
+				"port": 5432,
+				"database": "demo-shop",
+				"username": "postgress",
+				"password": "postgress"
+			}
+		],
 		"terminal.integrated.profiles.linux": {
 			"bash": {
 				"path": "bash",
